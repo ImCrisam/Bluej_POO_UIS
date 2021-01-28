@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=id\ nombre
+comment0.target=Producto(int,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ de\ objetos\ de\ la\ clase\ de\ producto.\r\n\u00A0\u00A0\u00A0\u00A0\ *\ La\ cantidad\ de\ stock\ inicial\ es\ cero.\r\n\ @param\ id\ N\u00FAmero\ de\ identificaci\u00F3n\ del\ producto.\r\n\ @param\ name\ El\ nombre\ del\ producto.\r\n
+comment1.params=
+comment1.target=int\ getID()
+comment1.text=\r\n\ @return\ El\ id\ del\ producto.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment2.text=\r\n\ @return\ El\ nombre\ del\ producto.\r\n
+comment3.params=
+comment3.target=int\ getCantidad()
+comment3.text=\r\n\ @return\ La\ cantidad\ en\ el\ inventario.\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ @return\ El\ id,nombre\ y\ cantidad\ en\ el\ inventario.\r\n
+comment5.params=cantidad
+comment5.target=void\ aumentarCantidad(int)
+comment5.text=\r\n\ Repoblar\ con\ la\ cantidad\ dada\ de\ este\ producto.\r\n\u00A0\u00A0\u00A0\u00A0\u00A0*\ La\ cantidad\ del\ producto\ actual\ (this)\ se\ incrementa\ en\ la\ cantidad\ dada.\r\n\ @param\ cantidad\ El\ n\u00FAmero\ de\ nuevos\ items\ a\ ser\ agregados\ al\ inventario.\r\n\ \ \ \ \ \ \ \ Debe\ ser\ mayor\ que\ cero.\r\n
+comment6.params=
+comment6.target=void\ venderUno()
+comment6.text=\r\n\ Vender\ uno\ de\ los\ productos\r\n\ Un\ error\ se\ reporta\ si\ no\ hay\ disponibles\r\n
+numComments=7

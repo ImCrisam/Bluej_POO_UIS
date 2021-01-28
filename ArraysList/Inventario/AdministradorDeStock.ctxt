@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=AdministradorDeStock()
+comment0.text=\r\n\ Inicializa\ el\ inventario\r\n
+comment1.params=item
+comment1.target=void\ agregaProducto(Producto)
+comment1.text=\r\n\ Agrega\ un\ producto\ a\ la\ lista,\ verificando\ antes,\ que\ a\u00FAn\ no\ exista\ en\ inventario.\r\n\ \r\n\ @param\ item\ El\ item\ a\ ser\ agregado\r\n
+comment2.params=id\ cantidad
+comment2.target=void\ recibeProducto(int,\ int)
+comment2.text=\r\n\ Recibe\ una\ entrega\ de\ un\ producto\ en\ particular.\r\n\ \ \ \ \u00A0\u00A0\u00A0\u00A0\ *\ Aumenta\ la\ cantidad\ del\ producto\ con\ la\ cantidad\ dada.\r\n\ @param\ id\ El\ ID\ del\ producto.\r\n\ @param\ cantidad\ La\ cantidad\ a\ aumentar.\r\n
+comment3.params=id
+comment3.target=Producto\ buscaProducto(int)
+comment3.text=\r\n\ Intenta\ encontrar\ un\ producto\ en\ el\ inventario\ con\ el\ ID\ dado.\r\n\ @return\ El\ producto\ que\ se\ identifique,\ \r\n\ o\ null\ si\ no\ hay\ ninguno\ con\ ese\ ID.\r\n
+comment4.params=id
+comment4.target=int\ cantidadEnStock(int)
+comment4.text=\r\n\ Busca\ un\ producto\ con\ el\ ID\ dado,\ y\ devuelve\ cuantos\ art\u00EDculos\r\n\ hay\ en\ stock.\ \r\n\ Si\ el\ ID\ no\ coincide\ con\ ning\u00FAn\ producto,\ devuelve\ cero.\r\n\ @param\ id\ El\ ID\ del\ producto.\r\n\ @return\ La\ cantidad\ de\ productos\ en\ el\ inventario.\r\n
+comment5.params=
+comment5.target=void\ muestraDetallesProducto()
+comment5.text=\r\n\ Imprime\ los\ detalles\ de\ todos\ los\ productos\r\n
+comment6.params=nombre
+comment6.target=boolean\ buscarproducto(java.lang.String)
+comment6.text=\r\n\ @author\ cristian\ arias\ \r\n\ @2014\r\n
+numComments=7

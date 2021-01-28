@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=EjemploInventario
+comment0.text=\r\n\ Demostraci\u00F3n\ de\ las\ clases\ administradorDeStock\ y\ Producto.\r\n\u00A0*\ La\ demostraci\u00F3n\ puede\ vloverse\ adecuadamente\ funcional\ al\r\n\u00A0*\ completar\ la\ clase\ administradorDeStock.\r\n\ \r\n\ @Ibrahim\ FRoM\ -\ Delkairo\ Jimenez\r\n\ @version\ 2012.06.26\r\n
+comment1.params=
+comment1.target=EjemploInventario()
+comment1.text=\r\n\ Crea\ un\ administradorDeStock\ y\ se\ llena\ con\r\n\ algunos\ productos\ de\ ejemplos.\r\n
+comment2.params=
+comment2.target=void\ demo()
+comment2.text=\r\n\ Proporciona\ una\ demostraci\u00F3n\ muy\ simple\ de\ c\u00F3mo\ un\ administradorDeStock\r\n\ \ \ \ \u00A0\u00A0\u00A0\u00A0\ *\ Podr\u00EDa\ ser\ utilizado.\ Se\ muestran\ detalles\ de\ un\ producto,\ el\ producto\ es\ \r\n\ realmacenado,\ y\ los\ detalles\ se\ vuelven\ a\ mostrar.\u00A0\u00A0\u00A0\u00A0\u00A0\ \r\n
+comment3.params=id
+comment3.target=void\ muestraDetalles(int)
+comment3.text=\r\n\ Mostrar\ los\ detalles\ de\ un\ producto\ determinado.\ Si\ lo\ encuentra,\r\n\ \ \ \ \u00A0\u00A0\u00A0\u00A0\ *\ Su\ nombre\ y\ la\ cantidad\ de\ acciones\ se\ muestran.\r\n\ @param\ id\ El\ ID\ del\ producto\ que\ se\ busca.\r\n
+comment4.params=id
+comment4.target=void\ venderProducto(int)
+comment4.text=\r\n\ Vender\ uno\ de\ los\ elementos\ dado.\r\n\ \ \ \ \u00A0\u00A0\u00A0\u00A0\ *\ Mostrar\ el\ antes\ y\ el\ despu\u00E9s\ de\ la\ situaci\u00F3n\ del\ producto.\r\n\ @param\ id\ El\ ID\ del\ producto\ que\ se\ va\ a\ vender.\r\n
+comment5.params=id
+comment5.target=Producto\ getProducto(int)
+comment5.text=\r\n\ Obtiene\ el\ producto\ con\ el\ identificador\ dado\ desde\ el\ administrador.\r\n\ \ \ \ \u00A0\u00A0\u00A0\u00A0\ *\ Un\ mensaje\ de\ error\ se\ imprime\ si\ no\ hay\ ninguna\ coincidencia.\r\n\ @param\ id\ El\ ID\ del\ producto.\r\n\ @return\ El\ Producto,\ o\ null\ si\ no\ encuentra\ concidencia.\r\n
+comment6.params=
+comment6.target=AdministradorDeStock\ getManejador()
+comment6.text=\r\n\ @return\ El\ manejador.\r\n
+numComments=7
