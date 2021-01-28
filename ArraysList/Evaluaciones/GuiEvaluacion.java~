@@ -1,0 +1,212 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+/**
+ * Write a description of class GuiEvaluacion here.
+ * 
+ * @author FRoM 
+ * @version 03/10/2012
+ */
+public class GuiEvaluacion extends JFrame 
+{
+    private Container panelContenedor;
+    private JButton listar;
+    private JButton buscar;
+    private JButton guardar;
+    private JTextArea areaTexto;
+    private JLabel estadoL;
+    private JLabel estadoB;
+    private JLabel estadoF;
+    private JLabel estadoG;
+    
+    private ArrayList<Evaluacion> strEvaluaciones;
+    
+    /**
+     * Constructor for objects of class GuiEvaluacion
+     */
+    public GuiEvaluacion()
+    {
+        super("Evaluación Auxiliatura");
+        construirVentana();
+    }
+
+     // método que lee el archivo y crea la colección
+     private void listarEvaluacion()
+     {
+       strEvaluaciones = new ArrayList<Evaluacion>();
+       areaTexto.setText ("Listado de Alumnos" )   ;    
+        
+       try
+       {
+            Scanner sc = new Scanner(new FileReader("registros.txt"));
+            while(sc.hasNext())
+            {
+                String estuline = sc.nextLine();
+                areaTexto.append("\n" + estuline );
+                StringTokenizer st = new StringTokenizer (estuline);
+                String codi = st.nextToken() ;
+                String apelli1 = st.nextToken() ;
+                String apelli2 = st.nextToken() ;
+                String nomb = st.nextToken() ;
+                String note = st.nextToken();
+                Double not = Double.parseDouble(note);
+                strEvaluaciones.add(new Evaluacion(codi, apelli1, apelli2,nomb,not));
+                
+                
+                
+                            
+                           
+                
+              
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e)
+        {
+         areaTexto.setText("Archivo no encontrado");
+        }
+        
+         
+       
+       buscar.setEnabled( true);
+          
+     }
+      // método que calcula el promedio
+    private static String emer()
+    {
+      JOptionPane temp = new JOptionPane();
+      String nomBus = temp.showInputDialog( "Nombre o codigo del alumno");
+      return nomBus;
+      
+      
+    }
+     private void buscarNombre()
+    {
+        String alumnoBuscado = emer();
+        
+        Iterator ior =  strEvaluaciones.iterator();
+        while (ior.hasNext())
+        {
+           Evaluacion alum = (Evaluacion)ior.next();
+           String nombree = alum.getNombre();
+           if (alumnoBuscado.equals(nombree)){ areaTexto.setText(nombree + " "+ alum.getNota()+ " ");   }
+
+        }
+        
+      
+      
+      
+      
+    }
+ 
+    // método que encuentra evaluadores bajo el promedio
+    private void guardarObjetos()
+    {
+      try
+      {
+        ObjectOutputStream lis = new ObjectOutputStream(new FileOutputStream("objRegs.lis"));
+        lis.writeObject(strEvaluaciones);
+        lis.close();
+      }
+      catch (IOException e)
+      {
+      }
+    }
+    private void construirVentana()
+    {
+        panelContenedor = getContentPane();
+        panelContenedor.setLayout( new BorderLayout( 3, 3 ) );
+        JPanel panelBotones = new JPanel();
+        areaTexto = new JTextArea( "no hay lista", 25, 19 );
+        estadoL = new JLabel( "Listos para buscar");
+        
+        
+        listar = new JButton( "LISTAR" );
+        buscar = new JButton( "BUSCAR" );
+        guardar = new JButton( "GUARDAR" );
+        buscar.setEnabled( false );
+        guardar.setEnabled( false );
+        
+       
+        panelContenedor.add( estadoL, BorderLayout.SOUTH );
+        
+        
+        
+        listar.addActionListener( new ActionListener()
+        {
+            public void actionPerformed( ActionEvent e )
+            {
+                listarEvaluacion();
+                estadoL.setText("puede buscar un alumno");
+                
+               
+                listar.setEnabled( false );
+                buscar.setEnabled( true);
+               
+                
+                
+                    
+            }
+        } );
+        
+        buscar.addActionListener( new ActionListener()
+        {
+            public void actionPerformed( ActionEvent e )
+            {
+                
+                buscarNombre();
+                
+                estadoL.setText(" ahora puede guardar ");
+
+                 
+                 buscar.setEnabled( false );
+                 guardar.setEnabled( true );
+                                               
+            }
+        } );
+
+        guardar.addActionListener( new ActionListener()
+        {
+            public void actionPerformed( ActionEvent e )
+            {
+                 guardarObjetos();
+                 areaTexto.setText("Guardado con exit");
+                 guardar.setEnabled( false );
+                 estadoL.setText("Guardado");
+                 
+                 
+            }
+        } );
+
+        panelBotones.add( listar );
+        panelBotones.add( buscar );
+        panelBotones.add( guardar );
+        panelContenedor.add( panelBotones, BorderLayout.NORTH );
+        panelContenedor.add( areaTexto, BorderLayout.CENTER);
+        
+        
+        
+        
+       
+        
+        pack();
+        setVisible(true);
+    }
+
+    public static void main( String [ ] args ) 
+    {
+        GuiEvaluacion aplicacion  = new GuiEvaluacion();
+        
+        
+    }
+}
