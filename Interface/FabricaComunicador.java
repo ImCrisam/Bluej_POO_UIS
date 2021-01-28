@@ -1,0 +1,45 @@
+import java.util.Scanner;
+/**
+ * FabricaComunicador
+ *
+ * 
+ * @author  FRoM 
+ * @version 2014
+ */
+public class FabricaComunicador
+{
+    
+    public static Comunicador creaComunicador()
+    {
+       Comunicador com = null;
+       String msn= null;
+       Scanner lector = new Scanner( System.in );
+       System.out.println( "Que comunicador quiere: (1) Celular, (2) Paloma mensajera?: " );
+       int tipo = lector.nextInt();
+       if( tipo == 1 )
+       {
+          msn  =  leerMsn();
+          com = new Celular(msn);
+
+        }
+           else if( tipo == 2 )
+            {
+             msn = leerMsn();
+             com = new PalomaMensajera(msn);
+             }
+                else 
+                {
+                    System.out.println( "Debe elegir entre: (1) Celular, (2) Paloma mensajera \n" );            
+                }
+       return com;
+           
+    }
+    
+    private static String leerMsn ()
+    {
+        Scanner mensaje = new Scanner( System.in );
+        System.out.println( "Escriba su mensaje:    " );
+        String msnn = mensaje.nextLine();
+        return msnn;
+    }
+}
